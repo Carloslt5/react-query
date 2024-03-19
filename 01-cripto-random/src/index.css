@@ -59,6 +59,13 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     background-color: #ffffff;
