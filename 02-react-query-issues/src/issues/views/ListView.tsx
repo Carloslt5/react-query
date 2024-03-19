@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useIssues } from "../../hooks/useIssues";
 import { IssueList } from "../components/IssueList";
 import { LabelPicker } from "../components/LabelPicker";
 
 export const ListView = () => {
   const [selectedLabels, setSelectedLabels] = useState<string[]>([]);
+  const { issuesData } = useIssues();
 
   const onLabelChanged = (labelName: string) => {
     selectedLabels.includes(labelName)
@@ -16,7 +18,7 @@ export const ListView = () => {
   return (
     <div className="row mt-5">
       <div className="col-8">
-        <IssueList />
+        <IssueList issuesData={issuesData.data || []} />
       </div>
 
       <div className="col-4">

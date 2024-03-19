@@ -9,7 +9,14 @@ import { router } from "./router";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/styles.css";
 
-const queryCLient = new QueryClient();
+const queryCLient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 2000 * 60,
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
