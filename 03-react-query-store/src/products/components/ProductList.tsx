@@ -1,25 +1,15 @@
-import { ProductCard } from ".."
+import { ProductCard, type Product } from "..";
 
-export const ProductList = () => {
+type ProductsProps = {
+  products: Product[];
+};
+
+export const ProductList = ({ products }: ProductsProps) => {
   return (
     <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-2 justify-center max-w-max">
-
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-
+      {products.map((product) => (
+        <ProductCard key={product.id} {...product} />
+      ))}
     </div>
-  )
-}
+  );
+};
