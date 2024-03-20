@@ -16,7 +16,7 @@ export const ListView = () => {
   const labelCahnge = (labelName: string) => onLabelChanged(labelName);
 
   return (
-    <div className="row mt-5">
+    <div className="mt-5 row">
       <div className="col-8">
         <IssueList issuesData={issuesData.data || []} />
       </div>

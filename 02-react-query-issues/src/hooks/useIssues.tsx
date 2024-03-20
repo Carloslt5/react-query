@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import { githubApi } from "../api/githubApi";
-import { Issues } from "../issues/types/issues";
+import { Issue } from "../issues/types/issues";
 
-const getIssuesData = async (): Promise<Issues[]> => {
-  const { data } = await githubApi.get<Issues[]>("/issues");
+const getIssuesData = async (): Promise<Issue[]> => {
+  const { data } = await githubApi.get<Issue[]>("/issues");
   // console.log("🚀 --------- data", data);
   return data;
 };

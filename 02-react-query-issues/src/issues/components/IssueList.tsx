@@ -23,7 +23,7 @@ export const IssueList = ({ issuesData }: IssuesListProps) => {
       </div>
       <div className="card-body text-dark">
         {issuesData.map((issue) => (
-          <IssueItem key={issue.id} {...issue} />
+          <IssueItem key={issue.id} issue={issue} />
         ))}
       </div>
     </div>
