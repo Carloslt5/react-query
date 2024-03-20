@@ -2,10 +2,14 @@ import { useState } from "react";
 import { useIssues } from "../../hooks/useIssues";
 import { IssueList } from "../components/IssueList";
 import { LabelPicker } from "../components/LabelPicker";
+import { Loader } from "../components/Loader";
+import { State } from "../types/issues";
 
 export const ListView = () => {
   const [selectedLabels, setSelectedLabels] = useState<string[]>([]);
-  const { issuesData } = useIssues();
+  const [state, setState] = useState<State>();
+
+  const { issuesData } = useIssues({ state, labels: selectedLabels });
 
   const onLabelChanged = (labelName: string) => {
     selectedLabels.includes(labelName)
@@ -18,7 +22,15 @@ export const ListView = () => {
   return (
     <div className="mt-5 row">
       <div className="col-8">
-        <IssueList issuesData={issuesData.data || []} />
+        {issuesData.isLoading ? (
+          <Loader />
+        ) : (
+          <IssueList
+            issuesData={issuesData.data || []}
+            state={state}
+            onStateChanged={(newState) => setState(newState)}
+          />
+        )}
       </div>
 
       <div className="col-4">
