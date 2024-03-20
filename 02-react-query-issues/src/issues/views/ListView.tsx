@@ -9,7 +9,7 @@ export const ListView = () => {
   const [selectedLabels, setSelectedLabels] = useState<string[]>([]);
   const [state, setState] = useState<State>();
 
-  const { issuesData } = useIssues({ state, labels: selectedLabels });
+  const { issuesData, page, prevPage, nextPage } = useIssues({ state, labels: selectedLabels });
 
   const onLabelChanged = (labelName: string) => {
     selectedLabels.includes(labelName)
@@ -31,6 +31,24 @@ export const ListView = () => {
             onStateChanged={(newState) => setState(newState)}
           />
         )}
+
+        <div className="mt-2 d-flex justify-content-between align-items-center">
+          <button
+            className="btn btn-outline-primary"
+            disabled={issuesData.isFetching}
+            onClick={prevPage}
+          >
+            Prev
+          </button>
+          <span>{page}</span>
+          <button
+            className="btn btn-outline-primary"
+            disabled={issuesData.isFetching}
+            onClick={nextPage}
+          >
+            Next
+          </button>
+        </div>
       </div>
 
       <div className="col-4">

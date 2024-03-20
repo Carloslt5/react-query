@@ -54,7 +54,7 @@ export const IssueItem = ({ issue }: IssueItemProps) => {
           <div>
             {issue.labels.map((label) => (
               <span
-                key={issue.id}
+                key={label.id}
                 className="m-1 badge rounded-pill"
                 style={{ backgroundColor: `#${label.color}`, color: "black" }}
               >
