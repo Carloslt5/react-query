@@ -1,5 +1,7 @@
 import { Button, Image, Input, Textarea } from "@nextui-org/react";
+import { useMutation } from "@tanstack/react-query";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
+import { productActions } from "..";
 
 type FormInputs = {
   id: number;
@@ -13,6 +15,10 @@ const templateImage =
   "https://st2.depositphotos.com/3904951/8925/v/450/depositphotos_89250312-stock-illustration-photo-picture-web-icon-in.jpg";
 
 export const NewProduct = () => {
+  const productMutation = useMutation({
+    mutationFn: productActions.createProduct,
+  });
+
   const { control, handleSubmit, watch } = useForm<FormInputs>({
     defaultValues: {
       title: "Chaqueta",
@@ -26,8 +32,9 @@ export const NewProduct = () => {
 
   const newImage = watch("image") || templateImage;
 
-  const onSubmit: SubmitHandler<FormInputs> = (dataSubmit) => {
-    console.log(dataSubmit);
+  const onSubmit: SubmitHandler<FormInputs> = (data) => {
+    console.log(data);
+    productMutation.mutate(data);
   };
 
   return (
@@ -115,8 +122,13 @@ export const NewProduct = () => {
             />
 
             <br />
-            <Button className="mt-2" color="primary" type="submit">
-              Crear
+            <Button
+              className="mt-2"
+              color="primary"
+              type="submit"
+              isDisabled={productMutation.isPending}
+            >
+              {productMutation.isPending ? "Loading..." : "Crear"}
             </Button>
           </div>
 

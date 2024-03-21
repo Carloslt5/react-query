@@ -26,3 +26,9 @@ export const getProductById = async (id: number): Promise<Product> => {
   const { data } = await productApi.get<Product>(`/products/${id}`);
   return data;
 };
+
+export const createProduct = async (product: Partial<Product>): Promise<Product> => {
+  await sleep(2);
+  const { data } = await productApi.post<Product>("/products", product);
+  return data;
+};

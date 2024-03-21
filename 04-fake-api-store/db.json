@@ -239,6 +239,28 @@
         "rate": 3.6,
         "count": 145
       }
+    },
+    {
+      "id": 21
+    },
+    {
+      "id": 22
+    },
+    {
+      "title": "Chaqueta",
+      "price": 0,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quibusdam eaque rerum est repudiandae similique veritatis fugiat! Et, delectus! Necessitatibus!",
+      "category": "men's clothing",
+      "image": "https://kaurifactory.com/wp-content/uploads/2021/04/mockup-sudadera-c.png",
+      "id": 23
+    },
+    {
+      "title": "Chaqueta 2",
+      "price": 0,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quibusdam eaque rerum est repudiandae similique veritatis fugiat! Et, delectus! Necessitatibus!",
+      "category": "men's clothing",
+      "image": "https://kaurifactory.com/wp-content/uploads/2021/04/mockup-sudadera-c.png",
+      "id": 24
     }
   ]
 }
