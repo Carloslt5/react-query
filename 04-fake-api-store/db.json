@@ -293,6 +293,14 @@
       "category": "women's clothing",
       "image": "https://kaurifactory.com/wp-content/uploads/2021/04/mockup-sudadera-c.png",
       "id": 28
+    },
+    {
+      "title": "Chaqueta",
+      "price": 0,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quibusdam eaque rerum est repudiandae similique veritatis fugiat! Et, delectus! Necessitatibus!",
+      "category": "women's clothing",
+      "image": "https://kaurifactory.com/wp-content/uploads/2021/04/mockup-sudadera-c.png",
+      "id": 29
     }
   ]
 }
