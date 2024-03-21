@@ -261,6 +261,38 @@
       "category": "men's clothing",
       "image": "https://kaurifactory.com/wp-content/uploads/2021/04/mockup-sudadera-c.png",
       "id": 24
+    },
+    {
+      "title": "Chaqueta 3",
+      "price": 0,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quibusdam eaque rerum est repudiandae similique veritatis fugiat! Et, delectus! Necessitatibus!",
+      "category": "men's clothing",
+      "image": "https://kaurifactory.com/wp-content/uploads/2021/04/mockup-sudadera-c.png",
+      "id": 25
+    },
+    {
+      "title": "Chaqueta",
+      "price": 0,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quibusdam eaque rerum est repudiandae similique veritatis fugiat! Et, delectus! Necessitatibus!",
+      "category": "men's clothing",
+      "image": "https://kaurifactory.com/wp-content/uploads/2021/04/mockup-sudadera-c.png",
+      "id": 26
+    },
+    {
+      "title": "Chaqueta",
+      "price": 0,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quibusdam eaque rerum est repudiandae similique veritatis fugiat! Et, delectus! Necessitatibus!",
+      "category": "men's clothing",
+      "image": "https://kaurifactory.com/wp-content/uploads/2021/04/mockup-sudadera-c.png",
+      "id": 27
+    },
+    {
+      "title": "Chaqueta",
+      "price": 0,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quibusdam eaque rerum est repudiandae similique veritatis fugiat! Et, delectus! Necessitatibus!",
+      "category": "women's clothing",
+      "image": "https://kaurifactory.com/wp-content/uploads/2021/04/mockup-sudadera-c.png",
+      "id": 28
     }
   ]
 }
