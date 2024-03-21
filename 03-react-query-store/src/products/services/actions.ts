@@ -1,4 +1,5 @@
 import { productApi, type Product } from "..";
+import { ProductLike } from "../types/product";
 
 type GetProductsOptions = {
   filterKey?: string;
@@ -12,7 +13,7 @@ const sleep = (seconds: number = 1): Promise<boolean> => {
   });
 };
 
-export const getProducts = async ({ filterKey }: GetProductsOptions) => {
+export const getProducts = async ({ filterKey }: GetProductsOptions): Promise<Product[]> => {
   await sleep(2);
   const filerUrl = filterKey ? `category=${filterKey}` : "";
 
@@ -27,7 +28,7 @@ export const getProductById = async (id: number): Promise<Product> => {
   return data;
 };
 
-export const createProduct = async (product: Partial<Product>): Promise<Product> => {
+export const createProduct = async (product: ProductLike): Promise<Product> => {
   await sleep(2);
   const { data } = await productApi.post<Product>("/products", product);
   return data;
