@@ -37,6 +37,19 @@ export const useMutationProduct = () => {
         }
       );
     },
+
+    onError: (_error, variables, context) => {
+      queryClient.removeQueries({ queryKey: ["product", context?.optimisticProduct.id] });
+      queryClient.setQueryData<Product[]>(
+        ["products", { filterKey: variables.category }],
+        (oldData) => {
+          if (!oldData) return [];
+          return oldData.filter((cacheProduct) => {
+            return cacheProduct.id !== context?.optimisticProduct.id;
+          });
+        }
+      );
+    },
   });
 
   return {
